@@ -9,5 +9,6 @@ public class Calculator {
     public static void main(String[] args) {
         Controller c = new Controller();
         c.start();
+        System.out.println("hello");
     }
 }
