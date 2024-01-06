@@ -29,9 +29,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Observable;
 
-public class Controller extends Observable implements ActionListener, KeyListener {
+public class Controller extends Observable implements ActionListener {
     private calculatorView view;
     private calculatorPanel overallPanel;
+
     public String currentNum = "";
     private static final Command[] commands = new Command[19];
     public static final int WIDTH = 510;
@@ -41,17 +42,11 @@ public class Controller extends Observable implements ActionListener, KeyListene
     }
 
     public void start() {
-        this.view = new calculatorView(510, 850);
-        this.overallPanel = new calculatorPanel(510, 850, this);
+        this.view = new calculatorView(WIDTH,HEIGHT);
+        this.overallPanel = new calculatorPanel(WIDTH, HEIGHT, this);
         this.overallPanel.setVisible(true);
         this.view.displayPanel(this.overallPanel);
         this.addObserver(this.overallPanel);
-        this.view.addKeyListener(this);
-        this.overallPanel.addKeyListener(new KeyAdapter() {
-            public void keyPressed(KeyEvent e) {
-                this.keyReleased(e);
-            }
-        });
         commands[0] = new zero();
         commands[1] = new one();
         commands[2] = new two();
@@ -160,73 +155,5 @@ public class Controller extends Observable implements ActionListener, KeyListene
                 System.out.println("invalid Option");
         }
 
-    }
-
-    public void keyTyped(KeyEvent e) {
-    }
-
-    public void keyPressed(KeyEvent e) {
-    }
-
-    public void keyReleased(KeyEvent e) {
-        switch (e.getKeyCode()) {
-            case 10:
-                commands[14].execute();
-                break;
-            case 45:
-                commands[16].execute();
-                break;
-            case 46:
-                commands[12].execute();
-                break;
-            case 47:
-                commands[13].execute();
-                break;
-            case 48:
-                System.out.println("the");
-                commands[0].execute();
-                this.updateViews();
-                break;
-            case 49:
-                commands[1].execute();
-                break;
-            case 50:
-                commands[2].execute();
-                break;
-            case 51:
-                commands[3].execute();
-                break;
-            case 52:
-                commands[4].execute();
-                break;
-            case 53:
-                commands[5].execute();
-                break;
-            case 54:
-                commands[6].execute();
-                break;
-            case 55:
-                commands[7].execute();
-                break;
-            case 56:
-                commands[8].execute();
-                break;
-            case 57:
-                commands[9].execute();
-                break;
-            case 67:
-                commands[11].execute();
-                break;
-            case 107:
-                commands[10].execute();
-                break;
-            case 127:
-                commands[18].execute();
-                break;
-            case 151:
-                commands[17].execute();
-        }
-
-        this.updateViews();
     }
 }

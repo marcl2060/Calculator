@@ -19,9 +19,4 @@ public class negative implements Command {
         System.out.println(this.currentNum);
         this.currentNum = "";
     }
-
-    public static void main(String[] args) {
-        Command cmd = new negative();
-        cmd.execute();
-    }
 }

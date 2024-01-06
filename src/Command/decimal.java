@@ -10,7 +10,9 @@ public class decimal implements Command {
 
     public void execute() {
         this.currentNum = calculatorWindow.getWindow();
-        calculatorWindow.setWindow(this.currentNum + ".");
+        if (!this.currentNum.contains(".")) {
+            calculatorWindow.setWindow(this.currentNum + ".");
+        }
         System.out.println(this.currentNum);
         this.currentNum = "";
     }

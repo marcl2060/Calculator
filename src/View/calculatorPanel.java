@@ -14,7 +14,7 @@ import javax.swing.JButton;
 public class calculatorPanel extends ViewPanel implements Observer {
     static final int BUTTON_WIDTH = 112;
     static final int BUTTON_HEIGHT = 112;
-    static String text = "";
+    static String text = "0";
     static final Font BUTTON_Font = new Font("Ariel", 0, 40);
 
     public calculatorPanel(int width, int height, ActionListener listener) {
