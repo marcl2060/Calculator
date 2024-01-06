@@ -10,8 +10,12 @@ public class negative implements Command {
 
     public void execute() {
         this.currentNum = calculatorWindow.getWindow();
-        this.currentNum = "-" + this.currentNum;
-        calculatorWindow.setBufferWindowNum(this.currentNum);
+        if (!this.currentNum.contains("-")) {
+            this.currentNum = "-" + this.currentNum;
+        } else {
+            this.currentNum = this.currentNum.substring(1);
+        }
+        calculatorWindow.setWindow(this.currentNum);
         System.out.println(this.currentNum);
         this.currentNum = "";
     }
