@@ -41,8 +41,8 @@ public class Controller extends Observable implements ActionListener, KeyListene
     }
 
     public void start() {
-        this.view = new calculatorView(495, 845);
-        this.overallPanel = new calculatorPanel(495, 845, this);
+        this.view = new calculatorView(510, 850);
+        this.overallPanel = new calculatorPanel(510, 850, this);
         this.overallPanel.setVisible(true);
         this.view.displayPanel(this.overallPanel);
         this.addObserver(this.overallPanel);
