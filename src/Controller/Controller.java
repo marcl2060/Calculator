@@ -155,5 +155,57 @@ public class Controller extends Observable implements ActionListener {
                 System.out.println("invalid Option");
         }
 
+        this.view.setFocusable(true);
+        this.view.requestFocusInWindow();
+        this.view.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                switch (e.getKeyCode()) {
+                    case KeyEvent.VK_0:
+                        commands[0].execute();
+                        break;
+                    case KeyEvent.VK_1:
+                        commands[1].execute();
+                        break;
+                    case KeyEvent.VK_2:
+                        commands[2].execute();
+                        break;
+                    case KeyEvent.VK_3:
+                        commands[3].execute();
+                        break;
+                    case KeyEvent.VK_4:
+                        commands[4].execute();
+                        break;
+                    case KeyEvent.VK_5:
+                        commands[5].execute();
+                        break;
+                    case KeyEvent.VK_6:
+                        commands[6].execute();
+                        break;
+                    case KeyEvent.VK_7:
+                        commands[7].execute();
+                        break;
+                    case KeyEvent.VK_8:
+                        commands[8].execute();
+                        break;
+                    case KeyEvent.VK_9:
+                        commands[9].execute();
+                        break;
+                    case KeyEvent.VK_PERIOD:
+                        commands[12].execute();
+                        break;
+                    case KeyEvent.VK_BACK_SPACE:
+                        commands[18].execute();
+                        break;
+                    case KeyEvent.VK_ENTER:
+                        commands[14].execute();
+                        break;
+                    // Add additional cases for other keys
+                }
+                updateViews();
+            }
+        });
+
     }
+
 }
