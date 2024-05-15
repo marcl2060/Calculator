@@ -9,7 +9,7 @@ public class clear implements Command {
     public void execute() {
         calculatorWindow.setBufferWindowNum("0");
         calculatorWindow.setWindow("0");
-        calculatorWindow.setOperation("");
+        calculatorWindow.setOperation(null);
     }
 
     public static void main(String[] args) {
