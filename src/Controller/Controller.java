@@ -110,8 +110,26 @@ public class Controller extends Observable implements ActionListener {
                     case KeyEvent.VK_9:
                         commands[9].execute();
                         break;
+                    case KeyEvent.VK_ADD:
+                        commands[10].execute();
+                        break;
+                    case KeyEvent.VK_C:
+                        commands[11].execute();
+                        break;
                     case KeyEvent.VK_PERIOD:
                         commands[12].execute();
+                        break;
+                    case KeyEvent.VK_SLASH:
+                        commands[13].execute();
+                        break;
+                    case KeyEvent.VK_N:
+                        commands[15].execute();
+                        break;
+                    case KeyEvent.VK_SUBTRACT:
+                        commands[16].execute();
+                        break;
+                    case KeyEvent.VK_MULTIPLY:
+                        commands[17].execute();
                         break;
                     case KeyEvent.VK_BACK_SPACE:
                         commands[18].execute();
